@@ -6,12 +6,18 @@ package chemistry_equation;
 public interface ChemistryEquationMessages {
     String MESSAGE_quit = "quit";
 
-    String MESSAGE_for_user_0 = "This program will automatically solve coefficients of your chemistry equation.\n" +
-            "Type the equation like \"Na + H.Cl -> Na.Cl + H_2\".\n" +
+    String MESSAGE_tip_0 = "This program will automatically solve coefficients of your chemistry equation.\n" +
+            "Type the equation like \"Na + H.Cl -> Na.Cl + H_2\".";
+    String MESSAGE_tip_1 = "Try something more complex, like \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\".";
+    String MESSAGE_tip_2 = "The program can find several solutions, try something like \"c + o_2 -> c.o + c.o_2\".";
+    String MESSAGE_tip_3 = "Also, the program can find some errors in equations, try \"c + o_2 + c.o_2 -> c.o\".";
+    String MESSAGE_tip_4 = "The program does not check if the reaction is possible."; // не проверяет, возможна ли реакция
+
+    String MESSAGE_for_user_0 = MESSAGE_tip_0 + "\n" +
             "To close the program type \"" + MESSAGE_quit + "\".";
-    String MESSAGE_for_user_1 = "Try something more complex, like \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\".";
-    String MESSAGE_for_user_2 = "The program can find several solutions, try something like \"c + o_2 -> c.o + c.o_2\".";
-    String MESSAGE_for_user_3 = "Also, the program can find some errors in equations, try \"c + o_2 + c.o_2 -> c.o\".";
+    String MESSAGE_for_user_1 = MESSAGE_tip_1;
+    String MESSAGE_for_user_2 = MESSAGE_tip_2;
+    String MESSAGE_for_user_3 = MESSAGE_tip_3;
     String MESSAGE_for_user_continue = "Try more or print \"" + MESSAGE_quit + "\".";
     String MESSAGE_critical_error = "Critical error, please, contact the developer.";
     String MESSAGE_goodbye = "Goodbye!";
@@ -41,5 +47,8 @@ public interface ChemistryEquationMessages {
     String MESSAGE_are_present_in_the_left_part_of_the_equation_but_they_are_not_present_in_the_right_part_of_the_equation = "are present in the left part of the equation, but they are not present in the right part of the equation.\n";
     String MESSAGE_is_present_in_the_right_part_of_the_equation_but_it_is_not_present_in_the_left_part_of_the_equation = "is present in the right part of the equation, but it is not present in the left part of the equation.\n";
     String MESSAGE_are_present_in_the_right_part_of_the_equation_but_they_are_not_present_in_the_left_part_of_the_equation = "are present in the right part of the equation, but they are not present in the left part of the equation.\n";
+
+    String MESSAGE_error_unable_to_get_a_name_of_the_element = "Error! Unable to get a name of the element!";
+    String MESSAGE_error_element_does_not_exist = "Error! The element \"%s\" does not exist!";
 }
 

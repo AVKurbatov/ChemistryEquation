@@ -35,7 +35,7 @@ public class ConsoleVersionChemicalEquationSolver implements ChemistryEquationMe
 
                 if(isContinued)
                     try {
-                        String message = ChemicalEquationSolverMathPart.solveChemistryEquation(userMessage); //  "" + na.na.o o_2 +
+                        String message = ChemicalEquationSolverMathPart.solveChemistryEquation(userMessage);
                         System.out.println(message);
                         ++callsCounter;
                     }catch (ParsingEquationException e){

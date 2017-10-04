@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChemicalEquationSolverConsole">
+    <output-path>$PROJECT_DIR$/out/artifacts/ChemicalEquationSolverConsole</output-path>
+    <root id="archive" name="ChemicalEquationSolverConsole.jar">
+      <element id="module-output" name="ChemicalEquationSolver" />
+    </root>
+  </artifact>
+</component>

@@ -1,32 +1,40 @@
 package chemistry_equation;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Created by Александр on 28.09.2017.
  */
-public class Element implements Comparable<Element>{
-    final private String name;
-    Element(String name) throws ElementsAndSubstancesException{
-        String nameTmp = name.trim();
-        if(nameTmp.length() > 2)
-            throw new ElementsAndSubstancesException();
-        for(char c: nameTmp.toCharArray()){
-            if(!Character.isLetter(c))
-                throw new ElementsAndSubstancesException();
-        }
+public class Element implements Comparable<Element>, MendeleevTable, ChemistryEquationMessages{
+    final private String _name;
+    private static TreeSet<String> ELEMENT_NAME_SET;
+    static{
+        ELEMENT_NAME_SET = new TreeSet<>();
+        ELEMENT_NAME_SET.addAll(Arrays.asList(ELEMENT_NAMES));
+    }
 
-        if (name.length() == 1)
-            this.name = "" + Character.toUpperCase(name.charAt(0));
-        else
-            this.name = "" + Character.toUpperCase(name.charAt(0)) + Character.toLowerCase(name.charAt(1));
+    Element(String name) throws ParsingEquationException{
+        String nameTmp = name.trim();
+        if(nameTmp.length() == 0)
+            throw new ParsingEquationException(MESSAGE_error_unable_to_get_a_name_of_the_element);
+        nameTmp = nameTmp.substring(0, 1).toUpperCase() + nameTmp.substring(1, nameTmp.length()).toLowerCase();
+
+        if(!ELEMENT_NAME_SET.contains(nameTmp))
+            throw new ParsingEquationException(String.format(MESSAGE_error_element_does_not_exist, nameTmp));
+
+        _name = nameTmp;
     }
     public int compareTo(Element e){
-        return name.compareTo(e.name);
+        return _name.compareTo(e._name);
     }
     public String getName() {
-        return name;
+        return _name;
     }
     public String toString() {
-        return name;
+        return _name;
     }
 }

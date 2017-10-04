@@ -45,7 +45,7 @@ public class Substance implements Comparable<Substance>, ChemistryPatterns{
 //        System.out.println(s1.compareTo(s2));
 //    }
 
-    Substance(String str) throws ElementsAndSubstancesException{
+    Substance(String str) throws ParsingEquationException{
         elements = new TreeMap<>();
         StringBuilder nameBuilder = new StringBuilder("");
 
