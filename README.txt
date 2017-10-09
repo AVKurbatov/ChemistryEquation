@@ -1,4 +1,4 @@
-This program calculates the coefficients in chemical reaction equations.
+п»їThis program calculates the coefficients in chemical reaction equations.
 The program is implemented in the Java language.
 
 The executable file of the console version of the program is contained in the directory \out\artifacts\ChemicalEquationSolverConsole,
@@ -9,11 +9,11 @@ The folder "MatLab" contains auxiliary scripts written during the development of
 
 =======
 
-Представленная программа производит вычисление коэффициентов в химических уравнениях реакции.
-Программа реализована на языке Java.
+РџСЂРµРґСЃС‚Р°РІР»РµРЅРЅР°СЏ РїСЂРѕРіСЂР°РјРјР° РїСЂРѕРёР·РІРѕРґРёС‚ РІС‹С‡РёСЃР»РµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ РІ С…РёРјРёС‡РµСЃРєРёС… СѓСЂР°РІРЅРµРЅРёСЏС… СЂРµР°РєС†РёРё.
+РџСЂРѕРіСЂР°РјРјР° СЂРµР°Р»РёР·РѕРІР°РЅР° РЅР° СЏР·С‹РєРµ Java.
 
-Исполняемый файл консольной версии программы содержится в папке \out\artifacts\ChemicalEquationSolverConsole,
-а GUI в \out\artifacts\ChemicalEquationSolverGUI
-Для запуска .jar-файла можно использовать файлы ".bat"
+РСЃРїРѕР»РЅСЏРµРјС‹Р№ С„Р°Р№Р» РєРѕРЅСЃРѕР»СЊРЅРѕР№ РІРµСЂСЃРёРё РїСЂРѕРіСЂР°РјРјС‹ СЃРѕРґРµСЂР¶РёС‚СЃСЏ РІ РїР°РїРєРµ \out\artifacts\ChemicalEquationSolverConsole,
+Р° GUI РІ \out\artifacts\ChemicalEquationSolverGUI
+Р”Р»СЏ Р·Р°РїСѓСЃРєР° .jar-С„Р°Р№Р»Р° РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ С„Р°Р№Р»С‹ ".bat"
 
-В папке "MatLab" содержатся вспомогательные скрипты, написанные при разработке математической части программы.
+Р’ РїР°РїРєРµ "MatLab" СЃРѕРґРµСЂР¶Р°С‚СЃСЏ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ СЃРєСЂРёРїС‚С‹, РЅР°РїРёСЃР°РЅРЅС‹Рµ РїСЂРё СЂР°Р·СЂР°Р±РѕС‚РєРµ РјР°С‚РµРјР°С‚РёС‡РµСЃРєРѕР№ С‡Р°СЃС‚Рё РїСЂРѕРіСЂР°РјРјС‹.
