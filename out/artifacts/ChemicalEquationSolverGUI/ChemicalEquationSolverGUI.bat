@@ -1,1 +1,0 @@
-java -jar ChemicalEquationSolverGUI.jar
