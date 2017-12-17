@@ -4,6 +4,7 @@ package avkurbatov_home.chemistry_equation;
  * Created by Александр on 10.12.2017.
  */
 class Messages {
+    private Messages(){}
 
     static{
         _lang = 0;
