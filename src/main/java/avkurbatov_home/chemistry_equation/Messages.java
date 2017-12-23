@@ -1,8 +1,5 @@
 package avkurbatov_home.chemistry_equation;
 
-/**
- * Created by Александр on 10.12.2017.
- */
 class Messages {
     private Messages(){}
 
@@ -35,12 +32,18 @@ class Messages {
             "Программа автоматически рассчитывает коэффициенты введённого уравнения реакции.\n" +
                     "Введите уравнение типа \"Na + H.Cl -> Na.Cl + H_2\"."
     };
+
+    private final static String[] MESSAGE_сalculate_coefficients = { "Calculate coefficients",
+            "Рассчитать коэффициенты"};
+    static String getMESSAGE_сalculate_coefficients(){
+        return getMessage(MESSAGE_сalculate_coefficients);    }
+
     private final static String[] MESSAGE_tip_1 = {"Try something more complex, like \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\".",
-            "Попробуйте что-нибудь более сложное, например, \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\".",};
+            "Попробуйте что-нибудь более сложное, например, \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\"."};
     private final static String[] MESSAGE_tip_2 = {"The program can find several solutions, try something like \"c + o_2 -> c.o + c.o_2\".",
-            "Если уравнение содержит несколько решений, программа их найдёт. Попробуйте ввести, например, \"c + o_2 -> c.o + c.o_2"};
+            "Если уравнение содержит несколько решений, программа их найдёт. Попробуйте ввести, например, \"c + o_2 -> c.o + c.o_2\"."};
     private final static String[] MESSAGE_tip_3 = {"Also, the program can find some errors in equations, try \"c + o_2 + c.o_2 -> c.o\".",
-                        "Также программа может находить ошибки в уравнениях, попробуйте \"c + o_2 + c.o_2 -> c.o\""};
+                        "Также программа может находить ошибки в уравнениях, попробуйте \"c + o_2 + c.o_2 -> c.o\"."};
     private final static String[] MESSAGE_tip_4 = {"The program does not check if the reaction is possible.",
                                            "Программа не проверяет, возможна ли реакция"};
 
@@ -84,6 +87,15 @@ class Messages {
         }
         return rez;
     }
+
+    private final static String[] MESSAGE_tip_answer_language = {
+            "Switch language and tap button \"" + MESSAGE_сalculate_coefficients[0] + "\" to receive " +
+                    "answer on another language.",
+            "Для получения ответа на другом языке " +
+                    "переключите язык и снова нажмите на кнопку \"" + MESSAGE_сalculate_coefficients[1] + "\"."};
+
+    static String getMessage_tip_answer_language(){
+        return getMessage(MESSAGE_tip_answer_language);    }
 
     private final static String[] MESSAGE_for_user_0 = MESSAGE_tip_0;
     private final static String[] MESSAGE_for_user_1 = {"To close the program type \"" + MESSAGE_quit + "\".",
@@ -289,11 +301,6 @@ class Messages {
             "Введите уравнение реакции"};
     static String getMESSAGE_type_chemical_equation_here(){
         return getMessage(MESSAGE_type_chemical_equation_here);    }
-
-    private final static String[] MESSAGE_сalculate_coefficients = { "Calculate coefficients",
-            "Рассчитать коэффициенты"};
-    static String getMESSAGE_сalculate_coefficients(){
-        return getMessage(MESSAGE_сalculate_coefficients);    }
 
     private final static String[] MESSAGE_tip = { "Tip: ",
             "Совет: "};

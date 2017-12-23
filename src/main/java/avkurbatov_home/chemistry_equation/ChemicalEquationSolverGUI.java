@@ -72,11 +72,11 @@ public class ChemicalEquationSolverGUI extends Application{
         boxLang.getChildren().addAll(rbEnglish, rbRussian);
 
         infoBox.getChildren().addAll(labelLanguage,
-                boxLang,
-                labelGreeting,
-                textFieldWithEquation,
-                buttonCalculate,
-                answerTextFlow);
+                                    boxLang,
+                                    labelGreeting,
+                                    textFieldWithEquation,
+                                    buttonCalculate,
+                                    answerTextFlow);
 
         BorderPane tipBox = new BorderPane();
 
@@ -117,8 +117,12 @@ public class ChemicalEquationSolverGUI extends Application{
             labelGreeting.setText(Messages.getMESSAGE_type_chemical_equation_here());
             buttonCalculate.setText(Messages.getMESSAGE_сalculate_coefficients());
             labelLanguage.setText(Messages.geMESSAGE_choose_language());
-            tipText.setText(Messages.getMESSAGE_tip() + Messages.getMessageSameTip());
             tipButton.setText(Messages.geMESSAGE_next_tip());
+            if(answerText.getText().equals("")){
+                tipText.setText(Messages.getMESSAGE_tip() + Messages.getMessageSameTip());
+            }else{
+                tipText.setText(Messages.getMESSAGE_tip() + Messages.getMessage_tip_answer_language());
+            }
             }
         );
 
