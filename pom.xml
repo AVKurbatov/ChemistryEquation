@@ -6,7 +6,7 @@
 
     <groupId>avkurbatov_home</groupId>
     <artifactId>chemical_equation</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <java.version>1.8</java.version>

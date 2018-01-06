@@ -175,7 +175,7 @@ class Messages {
         return getMessage(MESSAGE_error_substance_twice_in_right);    }
 
     private final static String[] MESSAGE_error_substance_twice_in_both = {"Error! A substance with a name \"%s\" occurs in both parts of the equation!",
-            "Ошибка! Вещество с названием \"%s\" присутствует в обеихъ частях уравнения!"};
+            "Ошибка! Вещество с названием \"%s\" присутствует в обеих частях уравнения!"};
     static String getMESSAGE_error_substance_twice_in_both(){
         return getMessage(MESSAGE_error_substance_twice_in_both);    }
 
