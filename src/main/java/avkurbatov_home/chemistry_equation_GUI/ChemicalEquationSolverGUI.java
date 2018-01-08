@@ -1,5 +1,9 @@
-package avkurbatov_home.chemistry_equation;
+package avkurbatov_home.chemistry_equation_GUI;
 
+import avkurbatov_home.chemistry_equation.ChemicalEquationSolverMathPart;
+import avkurbatov_home.chemistry_equation.ElementsAndSubstancesException;
+import avkurbatov_home.chemistry_equation.ParsingEquationException;
+import avkurbatov_home.chemistry_equation.Messages;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,9 +14,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
-/**
- * Created by Александр on 03.10.2017.
- */
 public class ChemicalEquationSolverGUI extends Application{
 
     public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class ChemicalEquationSolverGUI extends Application{
     private Button tipButton;
 
     public void start(Stage myStage) {
-        myStage.setTitle( Messages.getMESSAGE_chemical_equation_solver() );
+        myStage.setTitle( Messages.getMESSAGE_chemical_equation_solver() + " v.1.1" );
         BorderPane commonRoot = new BorderPane();
 
         Scene myScene = new Scene(commonRoot, MIN_WIDTH, MIN_HEIGHT);
@@ -60,7 +61,7 @@ public class ChemicalEquationSolverGUI extends Application{
         textFieldWithEquation.setOnAction(new EquationCalculator());
         buttonCalculate.setOnAction(new EquationCalculator());
 
-        labelLanguage = new Label(Messages.geMESSAGE_choose_language());
+        labelLanguage = new Label(Messages.getMESSAGE_choose_language());
         RadioButton rbEnglish = new RadioButton(RB_ENGLISH_NAME);
         RadioButton rbRussian = new RadioButton(RB_RUSSIAN_NAME);
         rbEnglish.setSelected(true); Messages.setLang(0);
@@ -83,7 +84,7 @@ public class ChemicalEquationSolverGUI extends Application{
         tipText = new Text(Messages.getMESSAGE_tip() + Messages.getMessageNextTip());
         TextFlow tipTextFlow = new TextFlow(tipText);
         tipTextFlow.setPrefWidth(MIN_WIDTH);
-        tipButton = new Button(Messages.geMESSAGE_next_tip());
+        tipButton = new Button(Messages.getMESSAGE_next_tip());
         tipButton.setPrefWidth(TIP_BUTTON_WIDTH);
 
         tipBox.setTop(tipTextFlow);
@@ -116,8 +117,8 @@ public class ChemicalEquationSolverGUI extends Application{
             myStage.setTitle( Messages.getMESSAGE_chemical_equation_solver() );
             labelGreeting.setText(Messages.getMESSAGE_type_chemical_equation_here());
             buttonCalculate.setText(Messages.getMESSAGE_сalculate_coefficients());
-            labelLanguage.setText(Messages.geMESSAGE_choose_language());
-            tipButton.setText(Messages.geMESSAGE_next_tip());
+            labelLanguage.setText(Messages.getMESSAGE_choose_language());
+            tipButton.setText(Messages.getMESSAGE_next_tip());
             if(answerText.getText().equals("")){
                 tipText.setText(Messages.getMESSAGE_tip() + Messages.getMessageSameTip());
             }else{

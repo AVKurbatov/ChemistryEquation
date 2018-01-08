@@ -1,6 +1,6 @@
 package avkurbatov_home.chemistry_equation;
 
-class Messages {
+public class Messages {
     private Messages(){}
 
     static{
@@ -14,7 +14,7 @@ class Messages {
     private static int _tip;
     private static int _forUser;
 
-    static void setLang(int lang){
+    public static void setLang(int lang){
         _lang = lang;
     }
 
@@ -35,7 +35,7 @@ class Messages {
 
     private final static String[] MESSAGE_сalculate_coefficients = { "Calculate coefficients",
             "Рассчитать коэффициенты"};
-    static String getMESSAGE_сalculate_coefficients(){
+    public static String getMESSAGE_сalculate_coefficients(){
         return getMessage(MESSAGE_сalculate_coefficients);    }
 
     private final static String[] MESSAGE_tip_1 = {"Try something more complex, like \"na.o.h + h_2.s.o_4 -> na_2.s.o_4 + H_2.o\".",
@@ -58,12 +58,12 @@ class Messages {
     private static String getMESSAGE_tip_4(){
         return getMessage(MESSAGE_tip_4);    }
 
-    static String getMessageNextTip(){
+    public static String getMessageNextTip(){
         String rez = getMessageSameTip();
         _tip = (_tip + 1) % 4;
         return rez;
     }
-    static String getMessageSameTip(){
+    public static String getMessageSameTip(){
         String rez;
         switch (_tip) {
             case 0:
@@ -94,7 +94,7 @@ class Messages {
             "Для получения ответа на другом языке " +
                     "переключите язык и снова нажмите на кнопку \"" + MESSAGE_сalculate_coefficients[1] + "\"."};
 
-    static String getMessage_tip_answer_language(){
+    public static String getMessage_tip_answer_language(){
         return getMessage(MESSAGE_tip_answer_language);    }
 
     private final static String[] MESSAGE_for_user_0 = MESSAGE_tip_0;
@@ -146,7 +146,7 @@ class Messages {
 
     private final static String[] MESSAGE_critical_error = {"Critical error, please, contact the developer.",
     "Критическая ошибка, пожалуйста, обратитесь к разработчику"};
-    static String getMESSAGE_critical_error(){
+    public static String getMESSAGE_critical_error(){
         return getMessage(MESSAGE_critical_error);    }
 
     private final static String[] MESSAGE_goodbye = {"Goodbye!", "До свидания!"};
@@ -279,42 +279,42 @@ class Messages {
 
     private final static String[] MESSAGE_error_class_missing = {"A class \"%s\" missed in a local library. Put a jar-file with this class into a subdirectory /lib in the actual directory",
             "В локальной библиотеке отсутствует класс \"%s\". Разместите jar-файл с отсутсвующим классом в подкаталог /lib/ в каталоге с настоящей программой."};
-    static String getMESSAGE_error_class_missing(){
+    public static String getMESSAGE_error_class_missing(){
         return getMessage(MESSAGE_error_class_missing);    }
 
     private final static String[] MESSAGE_error_in_equation = {"Error in equation",
             "Ошибка в уравнении"};
-    static String getMESSAGE_error_in_equation(){
+    public static String getMESSAGE_error_in_equation(){
         return getMessage(MESSAGE_error_in_equation);    }
 
     private final static String[] MESSAGE_сritical_error = {"Critical error",
             "Критическая ошибка"};
-    static String getMESSAGE_сritical_error(){
+    public static String getMESSAGE_сritical_error(){
         return getMessage(MESSAGE_сritical_error);    }
 
     private final static String[] MESSAGE_chemical_equation_solver = {"Chemical equation solver",
             "Решение уравнений реакции"};
-    static String getMESSAGE_chemical_equation_solver(){
+    public static String getMESSAGE_chemical_equation_solver(){
         return getMessage(MESSAGE_chemical_equation_solver);    }
 
     private final static String[] MESSAGE_type_chemical_equation_here = {"Type chemical equation here:",
             "Введите уравнение реакции"};
-    static String getMESSAGE_type_chemical_equation_here(){
+    public static String getMESSAGE_type_chemical_equation_here(){
         return getMessage(MESSAGE_type_chemical_equation_here);    }
 
     private final static String[] MESSAGE_tip = { "Tip: ",
             "Совет: "};
-    static String getMESSAGE_tip(){
+    public static String getMESSAGE_tip(){
         return getMessage(MESSAGE_tip);    }
 
     private final static String[] MESSAGE_next_tip = { "Next tip",
             "Далее"};
-    static String geMESSAGE_next_tip(){
+    public static String getMESSAGE_next_tip(){
         return getMessage(MESSAGE_next_tip);    }
 
     private final static String[] MESSAGE_choose_language = { "Choose language",
             "Выберите язык"};
-    static String geMESSAGE_choose_language(){
+    public static String getMESSAGE_choose_language(){
         return getMessage(MESSAGE_choose_language);    }
 
 }
