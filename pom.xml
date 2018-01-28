@@ -92,7 +92,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>${classpathDirectory}/</classpathPrefix>
-                            <mainClass>avkurbatov_home.chemistry_equation.ChemicalEquationSolverGUI</mainClass>
+                            <mainClass>avkurbatov_home.chemistry_equation_GUI.ChemicalEquationSolverGUI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -151,7 +151,6 @@
 
                             <repositoryName>ChemistryEquation</repositoryName>
                             <repositoryOwner>AVKurbatov</repositoryOwner>
-                            <username>AVKurbatov</username>
                         </configuration>
                     </execution>
                 </executions>
