@@ -6,71 +6,38 @@
 
     <groupId>avkurbatov_home</groupId>
     <artifactId>chemical_equation</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3</version>
 
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
-        <classpathDirectory>lib</classpathDirectory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <github.global.server>github</github.global.server>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Temporary Staging Repository</name>
-            <url>file://${project.build.directory}/mvn-repo</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>Rational-mvn-repo</id>
-            <url>https://raw.github.com/AVKurbatov/Rational/mvn-repo/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0-M3</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r05</version>
         </dependency>
+
         <dependency>
-            <groupId>avkurbatov_home</groupId>
-            <artifactId>Rational</artifactId>
-            <version>1.0</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
         </dependency>
+        <!-- tests -->
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-            </plugin>
-            <plugin>
-                <!-- Unit tests -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
-                <configuration>
-                    <parallel>methods</parallel>
-                    <threadCount>4</threadCount>
-                </configuration>
-            </plugin>
             <plugin>
                 <!-- Compile project -->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -83,80 +50,28 @@
                 </configuration>
             </plugin>
             <plugin>
-                <!-- Build an executable JAR -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>${classpathDirectory}/</classpathPrefix>
-                            <mainClass>avkurbatov_home.chemistry_equation_GUI.ChemicalEquationSolverGUI</mainClass>
+                            <mainClass>avkurbatov_home.chemistry_equation.ui.GUI</mainClass>
                         </manifest>
                     </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.8</version>
                 <executions>
                     <execution>
-                        <id>copy</id>
-                        <phase>install</phase>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>copy-dependencies</goal>
+                            <goal>single</goal>
                         </goals>
-                        <configuration>
-                            <outputDirectory>
-                                ${project.build.directory}/${classpathDirectory}
-                            </outputDirectory>
-                            <excludeArtifactIds>
-                                junit-jupiter-api,
-                                junit-platform-commons,
-                                opentest4j
-                            </excludeArtifactIds>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Construct all artifacts in target/mvn-repo folder -->
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.1</version>
-                <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
-                </configuration>
-            </plugin>
-            <!-- Deploy to github -->
-            <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>0.11</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                        <configuration>
-                            <message>Maven artifacts for ${project.version}</message>
-                            <path>site-plugin</path>
-                            <merge>true</merge>
-
-                            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                            <branch>refs/heads/mvn-repo</branch>
-                            <includes><include>**/*</include></includes>
-
-                            <repositoryName>ChemistryEquation</repositoryName>
-                            <repositoryOwner>AVKurbatov</repositoryOwner>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <finalName>ChemicalEquationSolverGUI</finalName>
     </build>
 
 </project>
