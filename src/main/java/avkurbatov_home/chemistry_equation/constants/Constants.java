@@ -1,9 +1,10 @@
 package avkurbatov_home.chemistry_equation.constants;
 
-public interface Constants {
-    String MESSAGE_DELIMITER = "->";
-    String QUIT = "quit";
+public class Constants {
+    private Constants() {}
+    public static final String MESSAGE_DELIMITER = "->";
+    public static final String QUIT = "quit";
 
-    String ELEMENT_PATTERN = "[A-Za-z]{1,2}(_\\d+)?";
-    String PLUS_PATTERN = "\\+";
+    public static final String ELEMENT_PATTERN = "[A-Za-z]{1,2}(_\\d+)?";
+    public static final String PLUS_PATTERN = "\\+";
 }

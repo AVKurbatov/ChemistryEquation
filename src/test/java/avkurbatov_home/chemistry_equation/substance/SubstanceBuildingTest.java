@@ -17,9 +17,9 @@ public class SubstanceBuildingTest {
         Substance substance = SubstanceBuilder.buildByString(" c_2.h.lI_3");
         // then
         assertEquals("C_2.H.Li_3", substance.getName());
-        assertEquals(ImmutableSet.of(Element.C, Element.H, Element.Li), substance.getElementsSet());
+        assertEquals(ImmutableSet.of(Element.C, Element.H, Element.LI), substance.getElementsSet());
         assertEquals(ImmutableMap.<Element, Integer>builder().put(Element.C, 2).put(Element.H, 1)
-                        .put(Element.Li, 3).build(),
+                        .put(Element.LI, 3).build(),
                 substance.getElementToIndex());
     }
 

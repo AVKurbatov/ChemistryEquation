@@ -32,7 +32,7 @@ public final class SubstanceBuilder {
         while (regexMatcher.find()) {
 
             String elementNameWithIndex = regexMatcher.group();
-            int posOfSeparator = elementNameWithIndex.indexOf("_");
+            int posOfSeparator = elementNameWithIndex.indexOf('_');
 
             Element element = findElement(elementNameWithIndex, posOfSeparator);
             int index = findElementIndex(elementNameWithIndex, posOfSeparator);
@@ -85,7 +85,7 @@ public final class SubstanceBuilder {
         if (nameBuilder.length() != 0) {
             nameBuilder.append(".");
         }
-        nameBuilder.append(element.toString());
+        nameBuilder.append(element.getName());
         if (index > 1) {
             nameBuilder.append("_");
             nameBuilder.append(index);

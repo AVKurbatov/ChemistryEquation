@@ -193,8 +193,8 @@ public class EquationSolverTest {
         // Given
         final StringBuilder messageBuilder = new StringBuilder();
         final Set<Element> set = new LinkedHashSet<>();
-        set.add(Element.Li);
-        set.add(Element.Ar);
+        set.add(Element.LI);
+        set.add(Element.AR);
         set.add(Element.C);
         // When
         equationSolver.appendElementNames(messageBuilder, set);

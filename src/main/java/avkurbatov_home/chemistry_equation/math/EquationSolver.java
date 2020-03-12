@@ -67,7 +67,7 @@ public class EquationSolver {
 
         checkSolutionsRowsSize(leftSubstances, rightSubstances, solutions);
 
-        if(solutions.size() == 0) {
+        if(solutions.isEmpty()) {
             return MESSENGER.noSolutionsOfTheEquation();
         }
 
@@ -165,14 +165,14 @@ public class EquationSolver {
 
             final List<Integer> rightIndexes = findRightIndexes(leftSubstances.size(), rightSubstances, solution);
 
-            if (leftIndexes.size() > 0) {
+            if (!leftIndexes.isEmpty()) {
                 message.append(MESSENGER.toObtainAdditionalSolutionsMoveFromTheLeftToTheRight());
 
                 appendSupposedAnswerSubstance(message, leftIndexes, leftSubstances);
             }
 
-            if (rightIndexes.size() > 0) {
-                if (leftIndexes.size() != 0) {
+            if (!rightIndexes.isEmpty()) {
+                if (!leftIndexes.isEmpty()) {
                     message.append(MESSENGER.alsoMoveFromTheRightToTheLeft());
                 } else {
                     message.append(MESSENGER.toObtainAdditionalSolutionsMoveFromTheRightToTheLeft());
@@ -251,12 +251,12 @@ public class EquationSolver {
         removeCommonElements(leftElements, rightElements);
 
         final StringBuilder messageBuilder = new StringBuilder(MESSENGER.error());
-        if (leftElements.size() > 0){
+        if (!leftElements.isEmpty()){
             messageBuilder.append(MESSENGER.element(leftElements.size() == 1));
             appendElementNames(messageBuilder, leftElements);
             messageBuilder.append(MESSENGER.isPresentOnlyInLeftPart(leftElements.size() == 1));
         }
-        if (rightElements.size() > 0){
+        if (!rightElements.isEmpty()){
             messageBuilder.append(MESSENGER.element(rightElements.size() == 1));
             appendElementNames(messageBuilder, rightElements);
             messageBuilder.append(MESSENGER.isPresentOnlyInRightPart(rightElements.size() == 1));
@@ -271,7 +271,7 @@ public class EquationSolver {
         final List<Element> list = new ArrayList<>(set);
         for(int i = 0; i < list.size(); ++i){
             messageBuilder.append("\"");
-            messageBuilder.append(list.get(i).toString());
+            messageBuilder.append(list.get(i).getName());
             messageBuilder.append("\"");
             if(i != list.size() - 1) {
                 messageBuilder.append(", ");

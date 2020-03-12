@@ -22,10 +22,10 @@ public class ConsoleVersion {
             String userMessage;
             boolean shouldContinue = true;
             do {
-                System.out.println(MESSENGER.getMessageForUser());
+                log(MESSENGER.getMessageForUser());
                 userMessage = br.readLine();
 
-                shouldContinue = !userMessage.trim().toLowerCase().equals(QUIT);
+                shouldContinue = QUIT.equalsIgnoreCase(userMessage);
 
                 if (shouldContinue) {
                     String message;
@@ -36,14 +36,17 @@ public class ConsoleVersion {
                     } catch (Exception e) {
                         message = MESSENGER.criticalError();
                     }
-                    System.out.println(message);
+                    log(message);
                 }
             } while(shouldContinue);
-            System.out.println(MESSENGER.goodbye());
+            log(MESSENGER.goodbye());
         } catch(IOException e) {
-            System.out.println( MESSENGER.inOutError() );
+            log( MESSENGER.inOutError() );
             e.printStackTrace();
         }
+    }
 
+    private static void log(String message) {
+        System.out.println(message);
     }
 }
